@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Histórico</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+{% include 'logo.html' %}
+
+<div class="container">
+
+    <div class="card">
+
+        <h2> Histórico de Movimentações</h2>
+
+        {% if historico %}
+
+            {% for item in historico %}
+
+                <p>{{ item }}</p>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p>Nenhuma movimentação registrada.</p>
+
+        {% endif %}
+
+        <a href="/" class="voltar">
+             Voltar ao Menu
+        </a>
+
+    </div>
+
+</div>
+
+{% include 'footer.html' %}
+
+</body>
+
+</html>

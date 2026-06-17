@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros - Biblioteca Comunitária EDN</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    {% include 'logo.html' %}
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1> Biblioteca Comunitária EDN</h1>
+
+            <h2>Cadastro de Livros</h2>
+
+            <form method="POST">
+
+                <input
+                    type="text"
+                    name="codigo"
+                    placeholder="Código do Livro"
+                    required>
+
+                <input
+                    type="text"
+                    name="titulo"
+                    placeholder="Título do Livro"
+                    required>
+
+                <input
+                    type="text"
+                    name="autor"
+                    placeholder="Autor do Livro"
+                    required>
+
+                <button type="submit">
+                    Salvar Livro
+                </button>
+
+            </form>
+
+            <a href="/" class="voltar">
+                ⬅ Voltar ao Menu
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h2> Acervo da Biblioteca</h2>
+
+            {% if livros %}
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Título</th>
+                        <th>Autor</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for livro in livros %}
+
+                    <tr>
+                        <td>{{ livro.codigo }}</td>
+                        <td>{{ livro.titulo }}</td>
+                        <td>{{ livro.autor }}</td>
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+            {% else %}
+
+            <p>Nenhum livro cadastrado até o momento.</p>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    {% include 'footer.html' %}
+
+</body>
+
+</html>

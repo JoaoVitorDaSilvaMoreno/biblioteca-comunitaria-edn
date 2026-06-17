@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Biblioteca Comunitária EDN</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+{% include 'logo.html' %}
+
+<div class="container">
+
+    <div class="card">
+
+        <h1> Biblioteca Comunitária EDN</h1>
+
+        <p>Sistema de Gerenciamento</p>
+
+        <br>
+
+        <div class="menu">
+
+            <a href="/livros"> Livros</a>
+
+            <a href="/usuarios"> Usuários</a>
+
+            <a href="/emprestimo"> Empréstimos</a>
+
+            <a href="/historico"> Histórico</a>
+
+            <a href="/devolver"> Devolver Livro</a>
+
+            <a href="/pesquisar"> Pesquisar Livro</a>
+
+            <a href="/sair"> Sair</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% include 'footer.html' %}
+
+</body>
+
+</html>

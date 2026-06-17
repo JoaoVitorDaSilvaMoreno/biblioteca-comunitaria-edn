@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Usuários</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+{% include 'logo.html' %}
+
+<div class="container">
+
+    <div class="card">
+
+        <h2> Cadastro de Usuários</h2>
+
+        <form method="POST">
+
+            <input type="text" name="nome" placeholder="Nome" required>
+
+            <input type="text" name="cpf" placeholder="CPF" required>
+
+            <input type="text" name="telefone" placeholder="Telefone" required>
+
+            <input type="email" name="email" placeholder="E-mail" required>
+
+            <input type="text" name="endereco" placeholder="Endereço" required>
+
+            <button type="submit">
+                Cadastrar
+            </button>
+
+        </form>
+
+        <a href="/" class="voltar">
+            ← Voltar ao Menu
+        </a>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Usuários Cadastrados</h2>
+
+        {% if usuarios %}
+
+            {% for usuario in usuarios %}
+
+                <p>
+                    {{ usuario.nome }} - {{ usuario.cpf }}
+                </p>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p>Nenhum usuário cadastrado.</p>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% include 'footer.html' %}
+
+</body>
+
+</html>

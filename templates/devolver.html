@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Devolver Livro</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+{% include 'logo.html' %}
+
+<div class="container">
+
+    <div class="card">
+
+        <h2> Devolução de Livro</h2>
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="codigo"
+                placeholder="Código do Livro"
+                required>
+
+            <button type="submit">
+                Devolver
+            </button>
+
+        </form>
+
+        <a href="/" class="voltar">
+             Voltar ao Menu
+        </a>
+
+    </div>
+
+</div>
+
+{% include 'footer.html' %}
+
+</body>
+
+</html>
